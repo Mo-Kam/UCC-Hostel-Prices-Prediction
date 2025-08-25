@@ -105,7 +105,7 @@ elif page == "Prediction":
 
         # Ensure dtypes match training pipeline
         for col in boolean_columns:
-            input_df[col] = input_df[col].astype(int)
+            input_df[col] = input_df[col].astype(float)
         for col in ["room_size_sqm","distance_minutes","num_roommates","total_amenities",
                     "log_avg_area_rent","log_deposit","log_rent_increase"]:
             input_df[col] = input_df[col].astype(float)
