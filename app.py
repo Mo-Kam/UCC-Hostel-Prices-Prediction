@@ -4,9 +4,12 @@ import numpy as np
 import joblib
 
 # =========================
-# Load trained model
+# Load trained model and sample input
 # =========================
-model = joblib.load("best_hostel_rent_model.pkl")
+
+model = joblib.load('Model/best_hostel_rent_model.pkl')
+sample_input = joblib.load('Model/sample_input.pkl')
+
 
 # =========================
 # Streamlit Page Config
