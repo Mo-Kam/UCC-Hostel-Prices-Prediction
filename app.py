@@ -58,7 +58,7 @@ elif page == "Prediction":
     gender = st.selectbox("Gender", ["Male","Female"])
     age_group = st.selectbox("Age Group", ["18-20","21-23","24+"])
     study_level = st.selectbox("Level of Study", ["Undergraduate","Postgraduate"])
-    lecture_location = st.text_input("Lecture Location (e.g., Science, Business)")
+    lecture_location = st.text_input("Lecture Location (e.g., Science, Old site)")
     faculty = st.text_input("Faculty")
     offcampus_duration = st.selectbox("Years Off Campus", ["<1 year","1-2 years","3+ years"])
     room_category = st.selectbox("Room Category", ["Standard","Deluxe","Suite"])
@@ -67,10 +67,10 @@ elif page == "Prediction":
 
     # Boolean features (Yes/No)
     yes_no_cols = [
-        "includes_water","includes_electricity","includes_waste_disposal",
-        "has_running_water","has_extra_storage","has_wifi_internet","has_study_area",
-        "has_security_services","has_generator_backup_power","furnished_bed",
-        "furnished_table","furnished_chairs","has_access_controls","has_janitorial_services"
+        "water_included","electricity_included","waste_disposal_included",
+        "running_water","extra_storage","wifi","study_area",
+        "security_services","generator_backup","furnished_bed",
+        "furnished_table","furnished_chairs","access_control","janitorial_services"
     ]
 
     bool_inputs = {}
