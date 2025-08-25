@@ -69,7 +69,7 @@ elif page == "Prediction":
     yes_no_cols = [
         "water_included","electricity_included","waste_disposal_included",
         "running_water","extra_storage","wifi","study_area",
-        "security_services","generator_backup","furnished_bed",
+        "security","generator_backup","furnished_bed",
         "furnished_table","furnished_chairs","access_control","janitorial_services"
     ]
 
@@ -85,16 +85,16 @@ elif page == "Prediction":
             "room_size_sqm": room_size,
             "distance_minutes": distance,
             "num_roommates": roommates,
-            "num_amenities": amenities,
-            "log_avg_rent_nearby": np.log1p(avg_rent_nearby),
-            "log_required_deposit": np.log1p(required_deposit),
-            "log_recent_rent_increase": np.log1p(recent_rent_increase),
+            "total_amenities": amenities,
+            "log_avg_area_rent": np.log1p(avg_rent_nearby),
+            "log_deposit": np.log1p(required_deposit),
+            "log_rent_increase": np.log1p(recent_rent_increase),
             "gender": gender,
             "age_group": age_group,
-            "level_of_study": study_level,
-            "lecture_location": lecture_location,
+            "study_level": study_level,
+            "campus_location": lecture_location,
             "faculty": faculty,
-            "off_campus_duration": offcampus_duration,
+            "stay_duration": offcampus_duration,
             "room_category": room_category,
             "hostel_location": hostel_location,
             "commute_mode": commute_mode
