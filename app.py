@@ -75,7 +75,7 @@ elif page == "Prediction":
 
     bool_inputs = {}
     st.markdown("### Amenities (Yes/No)")
-    for col in yes_no_cols:
+    for col in boolean_columns:
         bool_inputs[col] = 1 if st.checkbox(col.replace("_"," ").title()) else 0
 
     # ---- Prediction ----
