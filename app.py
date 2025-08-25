@@ -66,7 +66,7 @@ elif page == "Prediction":
     commute_mode = st.selectbox("Commute Mode", ["Walking","Shuttle","Taxi","Bike"])
 
     # Boolean features (Yes/No)
-    yes_no_cols = [
+    boolean_columns = [
         "water_included","electricity_included","waste_disposal_included",
         "running_water","extra_storage","wifi","study_area",
         "security","generator_backup","furnished_bed",
@@ -102,6 +102,13 @@ elif page == "Prediction":
         input_dict.update(bool_inputs)
 
         input_df = pd.DataFrame([input_dict])
+
+        # Ensure dtypes match training pipeline
+        for col in boolean_columns:
+            input_df[col] = input_df[col].astype(int)
+        for col in ["room_size_sqm","distance_minutes","num_roommates","total_amenities",
+                    "log_avg_area_rent","log_deposit","log_rent_increase"]:
+            input_df[col] = input_df[col].astype(float)
 
         # Predict (model expects log target → convert back with expm1)
         pred_log = model.predict(input_df)[0]
